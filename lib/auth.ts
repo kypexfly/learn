@@ -6,9 +6,10 @@ export const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt",
   },
-  pages: {
-    signIn: "/login",
-  },
+  // https://next-auth.js.org/configuration/pages
+  // pages: {
+  //   signIn: "/login",
+  // },
   providers: [
     GitHub({
       clientId: process.env.GITHUB_ID as string,

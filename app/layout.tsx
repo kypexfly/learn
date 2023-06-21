@@ -1,6 +1,7 @@
-import { Navbar } from "@/components/ui/site-navbar";
+import { Navbar } from "@/components/site-navbar";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import { Providers } from "@/components/providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,8 +14,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`flex flex-col h-screen dark ${inter.className}`}>
-        <Navbar />
-        <main className="container my-16 grow">{children}</main>
+        <Providers>
+          <Navbar />
+          <main className="container my-16 grow">{children}</main>
+        </Providers>
       </body>
     </html>
   );
