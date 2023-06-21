@@ -1,34 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Next authentication
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+```
+pnpm install next-auth
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### `@/lib/auth`
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Handle auth configuration like providers, etc.
 
-## Learn More
+### `@/lib/session`
 
-To learn more about Next.js, take a look at the following resources:
+Get current user by server side.
+If using this remember:
+*   Page must be async function
+*   `const user = await getCurrentUser();`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Auth Provider
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+When client side auth is needed, use this, if not, don't.
 
-## Deploy on Vercel
+### Middleware
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Redirects to protected route when logged in. Check [Taxonomy](https://github.com/shadcn/taxonomy) for more middleware examples.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### References
+
+* [Taxonomy Github by shadcn](https://github.com/shadcn/taxonomy)
+* [Get server session](https://next-auth.js.org/configuration/nextjs)
+* [You can easily protect client and server side rendered pages and API routes with NextAuth.js.](https://next-auth.js.org/tutorials/securing-pages-and-api-routes)
