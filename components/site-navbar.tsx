@@ -1,6 +1,6 @@
 import { getCurrentUser } from "@/lib/session";
 import Link from "next/link";
-import { SignOut } from "./sign";
+import { SignOutButton } from "./sign";
 import { Button } from "./ui/button";
 
 export async function Navbar() {
@@ -24,7 +24,7 @@ export async function Navbar() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img className="w-12 h-12 rounded-full" src={user.image!} alt={user.name!} />
             {user.name}
-            <SignOut />
+            <SignOutButton />
           </div>
         ) : (
           <ul>
