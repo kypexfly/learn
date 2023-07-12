@@ -1,9 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
+import React from "react"
+import ReactDOM from "react-dom/client"
+import App from "./App.tsx"
+import { ReduxProvider } from "./redux/provider.tsx"
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <ReduxProvider>
+      <App />
+    </ReduxProvider>
+  </React.StrictMode>
 )
