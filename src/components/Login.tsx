@@ -29,13 +29,14 @@ const Login = () => {
       <h1 className="text-3xl font-bold underline">Login</h1>
       <input
         type="text"
-        className="mr-2"
+        className="mr-2 px-2 py-1"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
 
       <button
-        className="mr-2 bg-slate-700 px-2 py-1 text-white"
+        className="mr-2 bg-slate-700 px-2 py-1 text-white disabled:opacity-50"
+        disabled={!username}
         onClick={onClickLogin}
       >
         Login

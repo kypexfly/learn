@@ -1,4 +1,4 @@
-import { createSlice, type PayloadAction } from "@reduxjs/toolkit"
+import { createSlice, nanoid, type PayloadAction } from "@reduxjs/toolkit"
 
 type InitialState = {
   value: AuthState
@@ -32,7 +32,7 @@ export const auth = createSlice({
         value: {
           isAuth: true,
           username: action.payload,
-          uid: "aaaa-bbbb-cccc-dddd",
+          uid: nanoid(),
           isModerator: false,
         },
       }
