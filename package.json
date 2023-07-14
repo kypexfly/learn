@@ -4,7 +4,7 @@
   "description": "Boilerplate for serverless Node REST API hosted on Vercel",
   "main": "api/index.js",
   "scripts": {
-    "start": "node api/index.js",
+    "start": "node build/index.js",
     "build": "tsc -p tsconfig.json",
     "dev": "nodemon src/index.ts",
     "preview": "pnpm build && pnpm start",
