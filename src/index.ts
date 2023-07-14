@@ -9,8 +9,8 @@ const PORT = process.env.PORT || 4000
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
+// Log requests
 app.use((req, res, next) => {
-  // Log request
   console.log(req.method, req.path)
   next()
 })

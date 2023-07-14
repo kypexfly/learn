@@ -2,4 +2,6 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 npx lint-staged
+
+# This is needed for Vercel deploy
 pnpm build && pnpm add-build

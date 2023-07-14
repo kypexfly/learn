@@ -10,8 +10,8 @@ const PORT = process.env.PORT || 4000;
 // Middleware
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
+// Log requests
 app.use((req, res, next) => {
-    // Log request
     console.log(req.method, req.path);
     next();
 });
