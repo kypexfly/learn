@@ -2,7 +2,7 @@
   "name": "express-ts-vercel",
   "version": "1.0.0",
   "description": "Boilerplate for serverless Node REST API hosted on Vercel",
-  "main": "index.js",
+  "main": "api/index.js",
   "scripts": {
     "start": "node api/index.js",
     "build": "tsc -p tsconfig.json",
