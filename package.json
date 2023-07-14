@@ -10,8 +10,7 @@
     "preview": "pnpm build && pnpm start",
     "lint": "eslint \"src/**/*.{js,ts}\"",
     "lint:fix": "pnpm lint --fix",
-    "add-build": "git add build",
-    "prepare": "husky install"
+    "add-build": "git add build"
   },
   "keywords": [],
   "author": "",
