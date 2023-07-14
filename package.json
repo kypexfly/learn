@@ -5,12 +5,14 @@
   "main": "api/index.js",
   "scripts": {
     "start": "node build/index.js",
-    "build": "tsc -p tsconfig.json",
+    "build": "rimraf build && tsc -p tsconfig.json",
     "dev": "nodemon src/index.ts",
     "preview": "pnpm build && pnpm start",
     "lint": "eslint \"src/**/*.{js,ts}\"",
-    "lint:fix": "pnpm lint --fix"
+    "lint:fix": "pnpm lint --fix",
+    "add-build": "git add build"
   },
+  "pre-commit": ["build", "add build"],
   "keywords": [],
   "author": "",
   "license": "ISC",
