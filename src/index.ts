@@ -1,7 +1,6 @@
-import "module-alias/register"
-
-import { postsRouter } from "@/routers/posts"
 import express from "express"
+
+import { postsRouter } from "./routers/posts"
 
 const app = express()
 const PORT = process.env.PORT || 4000
@@ -9,6 +8,12 @@ const PORT = process.env.PORT || 4000
 // Middleware
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+
+app.use((req, res, next) => {
+  // Log request
+  console.log(req.method, req.path)
+  next()
+})
 
 // Router
 app.use("/api/posts", postsRouter)
