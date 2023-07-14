@@ -13,6 +13,7 @@ Please note the following:
 
 * You might want to read [[1] this article](/#further-reading).
 * Husky is being used to run a pre-commit script: `pnpm build && pnpm add-build`. 
+* Warning: don't ignore `/build`. This is needed to deploy on Vercel.
 
 ## Setup
 
