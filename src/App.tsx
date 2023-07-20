@@ -1,35 +1,40 @@
 import "@/styles/globals.css"
-import {
-  MuiAutocomplete,
-  MuiButton,
-  MuiCard,
-  MuiCheckbox,
-  MuiLayout,
-  MuiRadioButton,
-  MuiRating,
-  MuiSelect,
-  MuiSwitch,
-  MuiTextField,
-  MuiTypography,
-} from "@/components"
+import { useState } from "react"
 
-// Tutorial from: Codevolution
-// https://www.youtube.com/playlist?list=PLC3y8-rFHvwh-K9mDlrrcDywl7CeVL2rO
+const Accordion = () => {
+  return (
+    <div className="w-96 border border-zinc-200">
+      <AccordionItem />
+      <AccordionItem />
+      <AccordionItem />
+    </div>
+  )
+}
+
+type AccordionItemProps = {
+  children?: React.ReactNode
+}
+
+const AccordionItem = ({ children }: AccordionItemProps) => {
+  const [active, setActive] = useState<boolean>(false)
+  return (
+    <div>
+      {children}
+      <div
+        className="flex cursor-pointer justify-between bg-blue-300 px-4 py-2 font-bold"
+        onClick={() => setActive(!active)}
+      >
+        Header <span>{active ? "-" : "+"}</span>
+      </div>
+      <div className={`${active ? "block" : "hidden"} px-4 py-2`}>Content</div>
+    </div>
+  )
+}
 
 function App() {
   return (
     <div className="App">
-      {/* <MuiTypography />
-      <MuiButton />
-      <MuiTextField />
-      <MuiSelect />
-      <MuiRadioButton />
-      <MuiCheckbox />
-      <MuiSwitch />
-      <MuiRating />
-      <MuiAutocomplete /> */}
-      {/* <MuiLayout /> */}
-      <MuiCard />
+      <Accordion />
     </div>
   )
 }
