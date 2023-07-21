@@ -237,7 +237,7 @@ const getUsers = async () => {
   return new Promise<User[]>((resolve) => {
     setTimeout(() => {
       resolve(data)
-    }, 2000)
+    }, 500)
   })
 }
 

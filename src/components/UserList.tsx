@@ -1,10 +1,13 @@
+import { memo } from "react"
 import { type User } from "@/data/users"
 
 interface UserListProps {
   users: User[]
+  color: boolean
 }
 
-const UserList = ({ users }: UserListProps) => {
+const UserList = ({ users, color }: UserListProps) => {
+  console.log("RENDER: UserList")
   return (
     <table className="w-full border-collapse border border-gray-300">
       <thead>
@@ -17,7 +20,7 @@ const UserList = ({ users }: UserListProps) => {
         </tr>
       </thead>
 
-      <tbody>
+      <tbody className={color ? "[&_tr:nth-child(2n)]:bg-zinc-100" : ""}>
         {users.map((user) => {
           return (
             <tr key={user.id} className="border border-gray-300">
@@ -34,4 +37,4 @@ const UserList = ({ users }: UserListProps) => {
   )
 }
 
-export default UserList
+export default memo(UserList)
