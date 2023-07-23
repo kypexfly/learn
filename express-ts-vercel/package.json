@@ -1,0 +1,43 @@
+{
+  "name": "express-ts-vercel",
+  "version": "1.0.0",
+  "description": "Boilerplate for serverless Node RESTful APIs hosted on Vercel",
+  "main": "build/index.js",
+  "scripts": {
+    "start": "node build/index.js",
+    "build": "rimraf build && tsc -p tsconfig.json",
+    "dev": "nodemon src/index.ts",
+    "preview": "pnpm build && pnpm start",
+    "lint": "eslint \"src/**/*.{js,ts}\"",
+    "lint:fix": "pnpm lint --fix",
+    "add-build": "git add build"
+  },
+  "_moduleAliases": {
+    "@": "./src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.0.2",
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.4.2",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.44.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.2.3",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.0",
+    "rimraf": "^5.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "zod": "^3.21.4"
+  }
+}
