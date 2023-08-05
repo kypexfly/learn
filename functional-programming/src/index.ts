@@ -1,3 +1,4 @@
+import { alternate } from "./utils/alternate";
 import { once } from "./utils/once";
 import { onceAndAfter } from "./utils/onceAndAfter";
 
@@ -19,3 +20,11 @@ onceAndAfterShout("hola")
 onceAndAfterShout("hola")
 onceAndAfterShout("hola")
 onceAndAfterShout("hola")
+
+
+const alternateShout = alternate(() => shout("A"), () => shout2("B"));
+
+alternateShout()
+alternateShout()
+alternateShout()
+alternateShout()
