@@ -1,3 +1,5 @@
+// chrispio workshop on functional programming
+
 // 1. INTRODUCTION
 
 // type Increment = (a: number) => number;
@@ -110,3 +112,4 @@ const composeWithEither = compose((x) => (isLeft(x) ? x : right(increment(x.righ
 
 const composeWithEitherResult = composeWithEither(0);
 const composeWithEitherResult2 = composeWithEither(2);
+

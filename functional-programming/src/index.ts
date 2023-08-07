@@ -1,6 +1,7 @@
-import { alternate } from "./utils/alternate";
-import { once } from "./utils/once";
-import { onceAndAfter } from "./utils/onceAndAfter";
+// Book From: Mastering JavaScript Functional Programming, Federico Kereki (2023)
+
+// EXAMPLE WITH CLOSURES
+import { once } from "./wrapped/once";
 
 const shout = (a: string) => console.log("shout1: ", a);
 
@@ -11,22 +12,37 @@ onceShout("I'm hidden from console");
 
 const shout2 = (a: string) => console.log("shout2: ", a);
 
-const onceAndAfterShout = onceAndAfter(shout, shout2)
+import { onceAndAfter } from "./wrapped/onceAndAfter";
 
-onceAndAfterShout("!!!!!")
-onceAndAfterShout("!!!!!")
-onceAndAfterShout("!!!!!")
-onceAndAfterShout("!!!!!")
+const onceAndAfterShout = onceAndAfter(shout, shout2);
 
+onceAndAfterShout("!!!!!");
+onceAndAfterShout("!!!!!");
+onceAndAfterShout("!!!!!");
+onceAndAfterShout("!!!!!");
 
-const alternateShout = alternate(() => shout("A"), () => shout2("B"));
+import { alternate } from "./wrapped/alternate";
 
-alternateShout()
-alternateShout()
-alternateShout()
-alternateShout()
+const alternateShout = alternate(
+  () => shout("A"),
+  () => shout2("B")
+);
 
-console.log("Hola")
+alternateShout();
+alternateShout();
+alternateShout();
+alternateShout();
 
-// const composeNumberToString = () => compose((x: number) => x.toString(), (x: number) => x + 1);
-// console.log(composeNumberToString()(2))
+// HOFs wrappers
+
+import { addLogging } from "./wrapped/logging";
+
+let increment = (a: number) => a + 1;
+increment = addLogging(increment);
+increment(1);
+
+import { addTiming } from "./wrapped/timing";
+
+increment = (a: number) => a + 1;
+increment = addTiming(increment);
+increment(1)
