@@ -1,6 +1,6 @@
 // Book From: Mastering JavaScript Functional Programming, Federico Kereki (2023)
 
-// EXAMPLE WITH CLOSURES
+// HOFs: Altering functions behavior
 import { once } from "./wrapped/once";
 
 const shout = (a: string) => console.log("shout1: ", a);
@@ -46,3 +46,4 @@ import { addTiming } from "./wrapped/timing";
 increment = (a: number) => a + 1;
 increment = addTiming(increment);
 increment(1)
+

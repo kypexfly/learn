@@ -182,6 +182,10 @@ function addTiming<T extends (...args: any[]) => any>(
 }
 ```
 
+3. Memoizing functions
+
+Refer to [memoize.ts](/src/wrapped/memoize.ts)
+
 ### Altered functions
 Differ in some key points from their original versions, like `once()`, `not()` or `invert()`; arity-related conversions, which produce a new function with a fixed number of parameters; and throttling and debouncing functions for performance.
 
