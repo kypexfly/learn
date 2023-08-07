@@ -17,7 +17,7 @@
 
 // increment • _toString = string
 type Compose = <A, B, C>(f: (x: B) => C, g: (x: A) => B) => (x: A) => C;
-const compose: Compose = (f, g) => (x) => f(g(x));
+export const compose: Compose = (f, g) => (x) => f(g(x));
 // const increment_then_toString_V2: IncrementThenToString = (a) => compose(_toString, increment)(a);
 
 // const test_1 = increment_then_toString_V1(1);
@@ -62,8 +62,8 @@ const none: Option<never> = {
 
 const isNone = <A>(x: Option<A>): x is None => x._tag === "None";
 
-const divideByTwo = (x: number) => (x === 0 ? none : some(x / 2));
-const increment = (x: number) => x + 1;
+export const divideByTwo = (x: number) => (x === 0 ? none : some(x / 2));
+export const increment = (x: number) => x + 1;
 
 const composedWithNone = compose((x) => (isNone(x) ? none : some(increment(x.value))), divideByTwo);
 
