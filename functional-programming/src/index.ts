@@ -1,7 +1,7 @@
 // Book From: Mastering JavaScript Functional Programming, Federico Kereki (2023)
 
 // HOFs: Altering functions behavior
-import { once } from "./wrapped/once";
+import { once } from "./altered/once";
 
 const shout = (a: string) => console.log("shout1: ", a);
 
@@ -12,7 +12,7 @@ onceShout("I'm hidden from console");
 
 const shout2 = (a: string) => console.log("shout2: ", a);
 
-import { onceAndAfter } from "./wrapped/onceAndAfter";
+import { onceAndAfter } from "./altered/onceAndAfter";
 
 const onceAndAfterShout = onceAndAfter(shout, shout2);
 
@@ -21,7 +21,7 @@ onceAndAfterShout("!!!!!");
 onceAndAfterShout("!!!!!");
 onceAndAfterShout("!!!!!");
 
-import { alternate } from "./wrapped/alternate";
+import { alternate } from "./altered/alternate";
 
 const alternateShout = alternate(
   () => shout("A"),
