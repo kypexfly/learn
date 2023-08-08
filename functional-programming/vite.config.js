@@ -1,3 +1,5 @@
+/// <reference types="vitest" />
+
 import { resolve, join } from "path";
 import { defineConfig } from "vite";
 
@@ -15,5 +17,8 @@ export default defineConfig({
   esbuild: {
     minify: false,
     keepNames: true,
+  },
+  test: {
+    include: ["test/*.test.{ts,js}"],
   },
 });
