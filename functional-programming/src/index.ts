@@ -16,10 +16,9 @@ import { onceAndAfter } from "./altered/onceAndAfter";
 
 const onceAndAfterShout = onceAndAfter(shout, shout2);
 
-onceAndAfterShout("!!!!!");
-onceAndAfterShout("!!!!!");
-onceAndAfterShout("!!!!!");
-onceAndAfterShout("!!!!!");
+onceAndAfterShout("1");
+onceAndAfterShout("2");
+onceAndAfterShout("2");
 
 import { alternate } from "./altered/alternate";
 
@@ -45,5 +44,10 @@ import { addTiming } from "./wrapped/timing";
 
 increment = (a: number) => a + 1;
 increment = addTiming(increment);
-increment(1)
+increment(1);
 
+// Memoized functions
+
+import { fibonacci } from "./fibonacci";
+const func = (...args: any[]) => console.log(JSON.stringify(args));
+console.log(func([1, 2, 3, 4], 2, 3, 4, 5));

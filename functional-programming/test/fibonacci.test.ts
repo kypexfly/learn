@@ -1,7 +1,5 @@
 import { expect, describe, it } from "vitest";
-
-export const fib = (n: number): number => (n <= 1 ? n : fib(n - 1) + fib(n - 2));
-
+import { fibonacci } from "src/fibonacci";
 const testCases = [
   { input: 0, expected: 0 },
   { input: 1, expected: 1 },
@@ -13,7 +11,7 @@ const testCases = [
 describe("fibonacci", () => {
   testCases.forEach(({ input, expected }) => {
     it(`fib(${input}) should return ${expected}`, () => {
-      const result = fib(input);
+      const result = fibonacci(input);
       expect(result).toBe(expected);
     });
   });

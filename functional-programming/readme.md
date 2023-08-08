@@ -189,5 +189,21 @@ Refer to [memoize.ts](/src/wrapped/memoize.ts)
 ### Altered functions
 Differ in some key points from their original versions, like `once()`, `not()` or `invert()`; arity-related conversions, which produce a new function with a fixed number of parameters; and throttling and debouncing functions for performance.
 
+Refer to [`/altered`](/src/altered/)
+
 ### Other productions
 Provide new operations, turn functions into promises, allow enhanced search functions, decouple methods from objects, transform them into plain functions, and go the other way around, converting functions into methods.
+
+## Transforming Functions
+
+A sort of factory method that lets you produce new versions of any given function.
+
+### 1. Currying
+Currying is transforming an m-ary function (that is, a function of arity m) into a sequence of m unary functions, each receiving one argument of the original function, from left to right
+
+### 2. Partial application
+Another time-honored FP transformation, which produces new versions of functions by fixing some of their arguments
+
+### 3. Partial currying
+Can be seen as a mixture of the two previous transformations
+
