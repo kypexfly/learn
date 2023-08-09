@@ -207,3 +207,18 @@ Another time-honored FP transformation, which produces new versions of functions
 ### 3. Partial currying
 Can be seen as a mixture of the two previous transformations
 
+## Connecting functions
+
+Create sequences of function calls and how to combine them to produce a more complex result out of several simpler components.
+
+### 1. Pipelining
+A way to join functions, similar to Unix/Linux pipes
+
+### 2. Chaining
+A variant of pipelining, but restricted to objects
+
+### 3. Composing
+A classic operation with its origins in basic computer theory
+
+### 4. Transducing
+An optimized way to compose map, filter, or reduce operations
