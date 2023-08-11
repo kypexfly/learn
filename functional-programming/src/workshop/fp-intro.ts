@@ -19,7 +19,7 @@
 
 // increment • _toString = string
 type Compose = <A, B, C>(f: (x: B) => C, g: (x: A) => B) => (x: A) => C;
-export const compose: Compose = (f, g) => (x) => f(g(x));
+const compose: Compose = (f, g) => (x) => f(g(x));
 // const increment_then_toString_V2: IncrementThenToString = (a) => compose(_toString, increment)(a);
 
 // const test_1 = increment_then_toString_V1(1);
