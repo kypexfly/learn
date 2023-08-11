@@ -1,7 +1,5 @@
 import "@/styles/globals.css"
-import FormExample from "./examples/FormExample"
-// import AccordionExample from "./examples/AccordionExample"
-// import FilterListExample from "./examples/FilterListExample"
+import { AccordionExample, FilterListExample, FormExample } from "./examples"
 
 function App() {
   return (
