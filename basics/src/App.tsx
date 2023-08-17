@@ -1,5 +1,5 @@
 import "@/styles/globals.css"
-import { AccordionExample, AudioPlayerExample, FilterListExample, FormExample } from "./examples"
+import { AccordionExample, AudioPlayerExample, FilterListExample, FormExample, GraphqlExample } from "./examples"
 
 function App() {
   return (
@@ -7,7 +7,8 @@ function App() {
       {/* <AccordionExample /> */}
       {/* <FilterListExample /> */}
       {/* <FormExample /> */}
-      <AudioPlayerExample />
+      {/* <AudioPlayerExample /> */}
+      <GraphqlExample />
     </div>
   )
 }
