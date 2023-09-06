@@ -10,11 +10,12 @@ const ProductSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
-    userId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-      required: true,
-    },
+    // Relation between product and user
+    // userId: {
+    //   type: mongoose.Schema.Types.ObjectId,
+    //   ref: "User",
+    //   required: true,
+    // },
   },
   { timestamps: true }
 );

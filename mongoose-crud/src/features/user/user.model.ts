@@ -10,15 +10,16 @@ const UserSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    cart: [
-      {
-        productId: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: "Product",
-          required: true,
-        },
-      },
-    ],
+    // Relation with Product model
+    // cart: [
+    //   {
+    //     productId: {
+    //       type: mongoose.Schema.Types.ObjectId,
+    //       ref: "Product",
+    //       required: true,
+    //     },
+    //   },
+    // ],
   },
   { timestamps: true }
 );

@@ -1,14 +1,14 @@
 import express from "express";
-import { connectDB } from "./lib/db.js";
-import { userRouter } from "./routes/user.js";
+import { connectDB } from "./utils/db.js";
+import { userRouter } from "./routes/user.router.js";
 
 const host = process.env.HOST ?? "localhost";
 const port = process.env.PORT ? Number(process.env.PORT) : 3000;
 
+await connectDB();
+
 const app = express();
 app.disable("x-powered-by");
-
-await connectDB();
 
 app.use(express.json());
 
