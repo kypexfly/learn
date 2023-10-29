@@ -19,3 +19,15 @@ export const createTodo = async (data: FormData) => {
 
   revalidatePath("/todos");
 };
+
+export const deleteTodo = async (id: string) => {
+  console.log("deleteTodo");
+
+  await db.task.delete({
+    where: {
+      id,
+    },
+  });
+
+  revalidatePath("/todos");
+};

@@ -2,6 +2,7 @@ import React from "react";
 
 import { getTodos } from "./actions";
 import AddTodoForm from "./AddTodoForm";
+import DeleteTodoButton from "./DeleteTodoButton";
 
 export default async function TodoPage() {
   const todos = await getTodos();
@@ -12,9 +13,20 @@ export default async function TodoPage() {
 
       <AddTodoForm />
 
-      <div>
-        <pre>{JSON.stringify(todos, null, 2)}</pre>
-      </div>
+      <ul className="flex flex-col gap-2 my-3">
+        {todos.map((todo) => {
+          const { id, description } = todo;
+          return (
+            <li key={id} className="flex gap-3">
+              <DeleteTodoButton id={id} />
+              <div>
+                <span className="text-sm opacity-50">{id}</span>
+                <p>{description}</p>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 }
